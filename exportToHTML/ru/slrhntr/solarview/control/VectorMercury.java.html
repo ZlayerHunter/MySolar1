@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>VectorMercury.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #0000ff;}
+.s3 { color: #808080; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+VectorMercury.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>ru.slrhntr.solarview.control;
+
+<span class="s0">import </span>com.badlogic.gdx.math.MathUtils;
+<span class="s0">import </span>com.badlogic.gdx.math.Polygon;
+
+<span class="s0">public class </span>VectorMercury {
+    <span class="s0">private </span>Polygon mercuryBounds;
+    <span class="s0">public </span>VectorMercury(Polygon mercuryBounds){
+        <span class="s0">this</span>.mercuryBounds = mercuryBounds;
+
+    }
+    <span class="s0">public void </span>handle(){
+        <span class="s0">float </span>speed = <span class="s2">100f</span>;
+        <span class="s3">//earthBounds.setPosition(earthBounds.getX(),earthBounds.getY());</span>
+        mercuryBounds.rotate(<span class="s2">1.2f</span>);
+        mercuryBounds.setPosition(mercuryBounds.getX() + MathUtils.cosDeg(mercuryBounds.getRotation()),
+                mercuryBounds.getY() + MathUtils.sinDeg(mercuryBounds.getRotation()));
+
+    }
+
+}
+</pre>
+</body>
+</html>
